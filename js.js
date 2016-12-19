@@ -1,32 +1,32 @@
 
 var clap = new Audio;
-clap.src = "drums/clap.mp3";
-var cowbel = new Audio;
-cowbel.src = "drums/cowbel.mp3";
-var crash = new Audio;
-crash.src = "drums/crash.mp3";
-var drum = new Audio;
-drum.src = "drums/drum.mp3";
-var hithat = new Audio;
-hithat.src = "drums/hithat.mp3";
-var maracas = new Audio;
-maracas.src = "drums/maracas.mp3";
-var rimshot = new Audio;
-rimshot.src = "drums/rimshot.mp3";
+clap.src = "drums/clap.wav";
+var boom = new Audio;
+boom.src = "drums/boom.wav";
+var tink = new Audio;
+tink.src = "drums/tink.wav";
+var ride = new Audio;
+ride.src = "drums/ride.wav";
+var hihat = new Audio;
+hihat.src = "drums/hihat.wav";
+var openhat = new Audio;
+openhat.src = "drums/openhat.wav";
+var kick = new Audio;
+kick.src = "drums/kick.wav";
 var snare = new Audio ;
-snare.src = "drums/snare.mp3";
-var snare1 = new Audio;
-snare1.src = "drums/snare1.mp3";
+snare.src = "drums/snare.wav";
+var tom = new Audio;
+tom.src = "drums/tom.wav";
 var songs = {
   "clap" : clap,
-  "cowbel" : cowbel,
-  "crash" : crash,
-  "drum" : drum ,
-  "hithat" : hithat,
-  "maracas":maracas,
-  "rimshot" : rimshot,
+  "boom": boom ,
+ "tink" : tink,
+  "ride": ride,
+  "hihat" : hihat,
+  "openhat": openhat,
+  "kick" : kick,
   "snare":snare,
-  "snare1": snare1
+  "tom" : tom
 };
 console.log(songs["drum"]);
 
@@ -39,10 +39,9 @@ document.addEventListener("keypress", function(n){
 
    var song  = document.getElementById(n.key).getAttribute("target");
    var music = songs[song];
+   music.currentTime = 0;
    music.play();
-  setTimeout(function(){
-    music.currentTime= 0;
-  }, 100 )
+
    setTimeout(function(){
      document.getElementById(n.key).classList.remove("playing");
 
